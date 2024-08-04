@@ -32,12 +32,42 @@ class PerformOperations {
             System.out.println("Exception cause : " + np.getMessage());
         }
     }
+
+    public int getArrayLength(int[] a){
+        try{
+            return a.length;
+        } catch (NullPointerException np){
+            System.out.println("Array is null : " + np.getMessage());
+        }
+        return 0;
+    }
+
+    // Making aware that this API could throw an exception. Possibly to be handled with try catch
+    public void getArrayIndexThrowException(int[] a, int index) throws ArrayIndexOutOfBoundsException {
+        System.out.println(a[index]);
+    }
+
+    //Handling the exception through try catch block
+    public void getArrayIndexHandleException(int[] a, int index) {
+        try{
+            System.out.println(a[index]);
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
 
 public class ExceptionHandling {
     public static void main(String[] args) {
-        PerformOperations obj = new PerformOperations();
-        obj.performDivision(100, 0);
-        obj.getLength(null);
+        PerformOperations performOperationsObject = new PerformOperations();
+        performOperationsObject.performDivision(100, 0);
+        performOperationsObject.getLength(null);
+        int[] arr = null;
+        int res = performOperationsObject.getArrayLength(null);
+        System.out.println(res);
+        int[] testArray;
+        testArray = new int[]{0, 1, 2};
+        performOperationsObject.getArrayIndexHandleException(testArray, 3);
+        performOperationsObject.getArrayIndexThrowException(testArray, 3);
     }
 }
