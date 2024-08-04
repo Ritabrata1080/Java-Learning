@@ -1,5 +1,5 @@
 /*
- Developed by Ritabrata, 2024
+ Developed by Ritabrata, 27/07/2024
  */
 
 import java.util.Scanner;
