@@ -1,17 +1,18 @@
 /**
- * Created by Agniva Mitra, Leetcode solutions
+ * Created by Agniva Mitra
  */
 
+package practice;
 
- /**
-  * Problem Description
+/**
+ * Problem Description
+ * <p>
+ * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+ * <p>
+ * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ */
 
-  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-
-    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-  */
-  
- class Solution {
+class LC_2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode();
         ListNode res = dummy;
@@ -35,6 +36,6 @@
             dummy = dummy.next;
         }
 
-        return res.next;        
+        return res.next;
     }
 }
